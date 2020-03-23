@@ -1,6 +1,6 @@
 """DNS Authenticator for Loopia."""
 import logging
-import xmlrpc.client
+import xmlrpclib
 import zope.interface
 
 from certbot import errors
@@ -77,7 +77,7 @@ class _LoopiaClient(object):
         self.endpoint = 'https://api.loopia.se/RPCSERV'
         self.username = username
         self.apikey = apikey
-        self.client = xmlrpc.client.ServerProxy(
+        self.client = xmlrpclib.ServerProxy(
             uri=self.endpoint,
             encoding='utf-8',
             verbose=True
