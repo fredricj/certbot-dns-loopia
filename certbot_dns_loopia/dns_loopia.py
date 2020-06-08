@@ -80,7 +80,7 @@ class _LoopiaClient(object):
         self.client = xmlrpc.client.ServerProxy(
             uri=self.endpoint,
             encoding='utf-8',
-            verbose=True
+            verbose=False
         )
 
     def add_txt_record(self, domain, record_name, record_content, record_ttl):
